@@ -45,7 +45,7 @@ function page() {
               <div className="card-body">
                 <img
                   src="as.jpeg"
-                  className="mb-3"
+                  className="mb-3" width="200" height="100"
                   alt="Repair"
                 />
                 <h5 className="fw-bold text-info">Mobile Repair</h5>
@@ -92,8 +92,8 @@ function page() {
             <div className="card bg-transparent border-light text-light h-100">
               <div className="card-body">
                 <img
-                  src="acall.jpeg"
-                  className="mb-3"
+                  src="acall.jpeg" 
+                  className="mb-3" width="200" height="100"
                   alt="Accessories"
                 />
                 <h5 className="fw-bold text-info">Accessories & Gadgets</h5>
