@@ -1,0 +1,60 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.Emad{
+    font-size: 35px;
+    border: 1px solid seagreen;
+    outline: none;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: seagreen;
+    color: red;
+}
+
+.navHero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  /* height, width, background ইত্যাদি */
+}
+.navHero h1 {
+  color: darkred;
+  margin-top: 130px;
+  margin-left: 20px;
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: red;
+}
+.navHero p {
+  color: lawngreen;
+  margin-top: 10px;
+  margin-left: 20px;
+  font-size: 20px;
+  width: 400px;
+  font-weight: bold;
+}
+.navHero button {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.my-section {
+  margin-top: 180px;
+}
+
+/*about starts*/
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.about h1 {
+  color: green;
+  margin-top: 80px;
+  margin-left: 0px;
+  font-size: 50px;
+}
+/*about end*/
