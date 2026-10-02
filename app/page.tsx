@@ -62,103 +62,268 @@ const stats = [
   { number: "Feni", label: "Our Location" },
 ];
 
+const accessories = [
+  {
+    image: "/glass.webp",
+    title: "Screen Protection",
+  },
+  {
+    image: "/memory.jpg",
+    title: "Memory Cards",
+  },
+  {
+    image: "/bluttoth.webp",
+    title: "Bluetooth Devices",
+  },
+  {
+    image: "/cable.jpg",
+    title: "Charging Cables",
+  },
+];
+
 export default function Home() {
   return (
     <main>
-      {/* HERO */}
+
+      {/* =====================================================
+          HERO
+      ====================================================== */}
+
       <section className="hero-section">
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-lg-7">
-              <div className="hero-content">
-                <div className="hero-badge">
-                  ● Trusted Mobile Shop in Feni
+        <div className="hero-background-grid" />
+
+        <div className="container position-relative">
+
+          <div className="hero-content-row">
+
+            {/* LEFT */}
+
+            <div className="hero-content">
+
+              <div className="hero-badge">
+                <span className="hero-badge-dot" />
+                Trusted Mobile Shop in Feni
+              </div>
+
+              <h1 className="hero-title">
+                Your Trusted
+                <br />
+                <span>Mobile Partner.</span>
+              </h1>
+
+              <p className="hero-description">
+                EMAD TELECOM provides smartphones, genuine accessories,
+                professional mobile repair and reliable servicing in
+                Feni, Bangladesh.
+              </p>
+
+              <div className="hero-buttons">
+
+                <Link
+                  href="/contact"
+                  className="btn-primary-custom hero-main-btn"
+                >
+                  Visit Our Store
+                  <span>↗</span>
+                </Link>
+
+                <Link
+                  href="/service"
+                  className="btn-outline-custom"
+                >
+                  Explore Services
+                </Link>
+
+              </div>
+
+              <div className="hero-trust">
+
+                <div className="hero-trust-item">
+                  <strong>Since 2020</strong>
+                  <span>Serving Feni</span>
                 </div>
 
-                <h1 className="hero-title">
-                  Your Trusted
-                  <br />
-                  <span>Mobile Partner.</span>
-                </h1>
+                <div className="hero-trust-line" />
 
-                <p className="hero-description">
-                  EMAD TELECOM provides smartphones, genuine accessories,
-                  professional mobile repair and reliable servicing in Feni,
-                  Bangladesh.
-                </p>
-
-                <div className="hero-buttons">
-                  <Link href="/contact" className="btn-primary-custom">
-                    Visit Our Store →
-                  </Link>
-
-                  <Link href="/service" className="btn-outline-custom">
-                    Explore Services
-                  </Link>
+                <div className="hero-trust-item">
+                  <strong>Genuine</strong>
+                  <span>Products & Support</span>
                 </div>
+
               </div>
+
             </div>
 
-            <div className="col-lg-5">
-              <div className="hero-image-card">
-                <Image
-                  src="/cover.jpg"
-                  alt="EMAD TELECOM"
-                  width={700}
-                  height={700}
-                  priority
-                />
+
+            {/* RIGHT IMAGE */}
+
+            <div className="hero-visual">
+
+              <div className="hero-image-wrapper">
+
+                <div className="hero-image-glow" />
+
+                <div className="hero-image-card">
+
+                  <Image
+                    src="/cover.jpg"
+                    alt="EMAD TELECOM"
+                    fill
+                    priority
+                    sizes="(max-width: 991px) 100vw, 48vw"
+                    className="hero-main-image"
+                  />
+
+                  <div className="hero-image-overlay" />
+
+                  <div className="hero-image-info">
+
+                    <div>
+                      <span>EMAD</span>
+                      <strong>TELECOM</strong>
+                    </div>
+
+                    <span className="hero-image-arrow">
+                      ↗
+                    </span>
+
+                  </div>
+
+                </div>
+
               </div>
+
+              <div className="hero-floating-card">
+
+                <div className="hero-floating-check">
+                  ✓
+                </div>
+
+                <div>
+                  <strong>Reliable Service</strong>
+                  <span>Mobile solutions in Feni</span>
+                </div>
+
+              </div>
+
+              <div className="hero-number">
+                01
+              </div>
+
             </div>
+
           </div>
+
         </div>
+
       </section>
 
-      {/* STATS */}
+
+      {/* =====================================================
+          STATS
+      ====================================================== */}
+
       <section className="stats-section">
+
         <div className="container">
-          <div className="row">
-            {stats.map((stat) => (
-              <div className="col-6 col-lg-3" key={stat.label}>
-                <div className="stat-box">
-                  <div className="stat-number">{stat.number}</div>
-                  <div className="stat-label">{stat.label}</div>
+
+          <div className="stats-row">
+
+            {stats.map((stat, index) => (
+              <div
+                className={`stat-box ${
+                  index !== stats.length - 1
+                    ? "stat-border"
+                    : ""
+                }`}
+                key={stat.label}
+              >
+
+                <div className="stat-number">
+                  {stat.number}
                 </div>
+
+                <div className="stat-label">
+                  {stat.label}
+                </div>
+
               </div>
             ))}
+
           </div>
+
         </div>
+
       </section>
 
-      {/* PRODUCTS */}
-      <section className="section">
+
+      {/* =====================================================
+          PRODUCTS
+      ====================================================== */}
+
+      <section className="section products-home-section">
+
         <div className="container">
-          <div className="section-heading">
-            <span className="section-label">Featured Devices</span>
 
-            <h2 className="section-title">
-              Popular Smartphones
-            </h2>
+          <div className="section-heading home-section-heading">
 
-            <p className="section-description">
-              Discover some of the smartphones available through EMAD TELECOM.
-            </p>
+            <div>
+
+              <span className="section-label">
+                FEATURED DEVICES
+              </span>
+
+              <h2 className="section-title">
+                Popular Smartphones
+              </h2>
+
+              <p className="section-description">
+                Discover some of the smartphones available through
+                EMAD TELECOM.
+              </p>
+
+            </div>
+
+            <Link
+              href="/contact"
+              className="section-view-link"
+            >
+              Ask About Devices
+              <span>↗</span>
+            </Link>
+
           </div>
 
+
           <div className="row g-4">
-            {products.map((product) => (
-              <div className="col-md-6 col-lg-4" key={product.name}>
-                <div className="product-card">
+
+            {products.map((product, index) => (
+
+              <div
+                className="col-12 col-md-6 col-lg-4"
+                key={product.name}
+              >
+
+                <article className="product-card premium-product-card">
+
+                  <div className="product-number">
+                    0{index + 1}
+                  </div>
+
                   <div className="product-image">
+
                     <Image
                       src={product.image}
                       alt={product.name}
-                      width={500}
-                      height={500}
+                      fill
+                      sizes="(max-width: 767px) 100vw, (max-width: 991px) 50vw, 33vw"
+                      className="product-main-image"
                     />
+
                   </div>
 
                   <div className="product-body">
+
                     <div className="product-brand">
                       Smartphone
                     </div>
@@ -171,35 +336,75 @@ export default function Home() {
                       {product.details}
                     </p>
 
-                    <div className="product-price">
-                      {product.price}
+                    <div className="product-bottom">
+
+                      <div className="product-price">
+                        {product.price}
+                      </div>
+
+                      <Link
+                        href="/contact"
+                        className="product-enquire"
+                      >
+                        Enquire
+                        <span>↗</span>
+                      </Link>
+
                     </div>
+
                   </div>
-                </div>
+
+                </article>
+
               </div>
+
             ))}
+
           </div>
+
         </div>
+
       </section>
 
-      {/* ABOUT PREVIEW */}
+
+      {/* =====================================================
+          ABOUT
+      ====================================================== */}
+
       <section className="section section-light">
+
         <div className="container">
-          <div className="row align-items-center g-5">
-            <div className="col-lg-6">
-              <div className="about-image">
-                <Image
-                  src="/mw.jpg"
-                  alt="EMAD TELECOM store"
-                  width={800}
-                  height={600}
-                />
+
+          <div className="about-home-grid">
+
+            <div className="about-home-image">
+
+              <Image
+                src="/mw.jpg"
+                alt="EMAD TELECOM store"
+                fill
+                sizes="(max-width: 991px) 100vw, 50vw"
+              />
+
+              <div className="about-image-overlay" />
+
+              <div className="about-image-badge">
+
+                <span>EST.</span>
+
+                <strong>2020</strong>
+
+                <small>FENI</small>
+
               </div>
+
             </div>
 
-            <div className="col-lg-6">
+
+            <div className="about-home-content">
+
               <span className="section-label">
-                About EMAD TELECOM
+                ABOUT EMAD TELECOM
               </span>
 
               <h2 className="section-title text-start">
@@ -208,32 +413,64 @@ export default function Home() {
 
               <p className="section-description">
                 Established in 2020 in Feni, EMAD TELECOM focuses on
-                smartphones, genuine accessories and professional mobile
-                services.
+                smartphones, genuine accessories and professional
+                mobile services.
               </p>
 
               <p className="section-description">
-                We also provide fresh-condition second-hand Android and
-                iPhone devices, along with repair and servicing support.
+                We also provide fresh-condition second-hand Android
+                and iPhone devices, along with repair and servicing
+                support.
               </p>
+
+              <div className="about-mini-points">
+
+                <div>
+                  <span>✓</span>
+                  Genuine smartphones & accessories
+                </div>
+
+                <div>
+                  <span>✓</span>
+                  Professional repair & servicing
+                </div>
+
+                <div>
+                  <span>✓</span>
+                  Customer-focused support
+                </div>
+
+              </div>
 
               <Link
                 href="/about"
-                className="btn-primary-custom mt-3"
+                className="btn-primary-custom mt-4"
               >
-                Learn More →
+                Learn More
+                <span>→</span>
               </Link>
+
             </div>
+
           </div>
+
         </div>
+
       </section>
 
-      {/* SERVICES */}
-      <section className="section">
+
+      {/* =====================================================
+          SERVICES
+      ====================================================== */}
+
+      <section className="section services-home-section">
+
         <div className="container">
+
           <div className="section-heading">
+
             <span className="section-label">
-              What We Offer
+              WHAT WE OFFER
             </span>
 
             <h2 className="section-title">
@@ -244,44 +481,87 @@ export default function Home() {
               From buying a new phone to repairing an existing device,
               our services cover everyday mobile needs.
             </p>
+
           </div>
 
-          <div className="row g-4">
-            {services.map((service) => (
+
+          <div className="row g-3">
+
+            {services.map((service, index) => (
+
               <div
-                className="col-md-6 col-lg-4"
+                className="col-12 col-md-6 col-lg-4"
                 key={service.title}
               >
-                <div className="service-card">
-                  <div className="service-icon">
-                    {service.icon}
+
+                <Link
+                  href="/service"
+                  className="service-card premium-service-card"
+                >
+
+                  <div className="service-top">
+
+                    <span className="service-number">
+                      0{index + 1}
+                    </span>
+
+                    <span className="service-icon">
+                      {service.icon}
+                    </span>
+
                   </div>
 
-                  <h3>{service.title}</h3>
+                  <h3>
+                    {service.title}
+                  </h3>
 
-                  <p>{service.text}</p>
-                </div>
+                  <p>
+                    {service.text}
+                  </p>
+
+                  <span className="service-link">
+                    Explore Service
+                    <span>↗</span>
+                  </span>
+
+                </Link>
+
               </div>
+
             ))}
+
           </div>
 
+
           <div className="text-center mt-5">
+
             <Link
               href="/service"
               className="btn-primary-custom"
             >
-              View All Services →
+              View All Services
+              <span>→</span>
             </Link>
+
           </div>
+
         </div>
+
       </section>
 
-      {/* ACCESSORIES */}
-      <section className="section section-light">
+
+      {/* =====================================================
+          ACCESSORIES
+      ====================================================== */}
+
+      <section className="section section-light accessories-home-section">
+
         <div className="container">
+
           <div className="section-heading">
+
             <span className="section-label">
-              Accessories
+              ACCESSORIES
             </span>
 
             <h2 className="section-title">
@@ -289,81 +569,206 @@ export default function Home() {
             </h2>
 
             <p className="section-description">
-              Browse useful accessories for your everyday smartphone needs.
+              Browse useful accessories for your everyday smartphone
+              needs.
             </p>
+
           </div>
 
-          <div className="row g-4">
-            {[
-              {
-                image: "/glass.webp",
-                title: "Screen Protection",
-              },
-              {
-                image: "/memory.jpg",
-                title: "Memory Cards",
-              },
-              {
-                image: "/bluttoth.webp",
-                title: "Bluetooth Devices",
-              },
-              {
-                image: "/cable.jpg",
-                title: "Charging Cables",
-              },
-            ].map((item) => (
-              <div className="col-6 col-lg-3" key={item.title}>
-                <div className="product-card">
-                  <div className="product-image">
+
+          <div className="row g-3">
+
+            {accessories.map((item, index) => (
+
+              <div
+                className="col-6 col-lg-3"
+                key={item.title}
+              >
+
+                <Link
+                  href="/contact"
+                  className="accessory-card-new"
+                >
+
+                  <div className="accessory-image-new">
+
                     <Image
                       src={item.image}
                       alt={item.title}
-                      width={400}
-                      height={400}
+                      fill
+                      sizes="(max-width: 767px) 50vw, 25vw"
                     />
+
+                    <span>
+                      0{index + 1}
+                    </span>
+
                   </div>
 
-                  <div className="product-body">
-                    <h3 className="product-title">
+                  <div className="accessory-body-new">
+
+                    <h3>
                       {item.title}
                     </h3>
+
+                    <span>
+                      Enquire ↗
+                    </span>
+
                   </div>
-                </div>
+
+                </Link>
+
               </div>
+
             ))}
+
           </div>
+
         </div>
+
       </section>
 
-      {/* CTA */}
+
+      {/* =====================================================
+          WHY EMAD
+      ====================================================== */}
+
+      <section className="why-home-section">
+
+        <div className="container">
+
+          <div className="why-home-grid">
+
+            <div>
+
+              <span className="section-label">
+                WHY EMAD TELECOM
+              </span>
+
+              <h2>
+                A better way to
+                <br />
+                <span>handle your mobile needs.</span>
+              </h2>
+
+              <p>
+                We focus on genuine products, practical guidance and
+                dependable service to make your mobile experience
+                easier.
+              </p>
+
+              <Link
+                href="/contact"
+                className="btn-primary-custom mt-4"
+              >
+                Talk With Us
+                <span>↗</span>
+              </Link>
+
+            </div>
+
+
+            <div className="why-list">
+
+              <div className="why-item">
+
+                <span>01</span>
+
+                <div>
+                  <h3>Genuine Products</h3>
+                  <p>
+                    Quality smartphones and accessories for everyday
+                    customer needs.
+                  </p>
+                </div>
+
+              </div>
+
+              <div className="why-item">
+
+                <span>02</span>
+
+                <div>
+                  <h3>Helpful Guidance</h3>
+                  <p>
+                    Practical product information before choosing
+                    your device.
+                  </p>
+                </div>
+
+              </div>
+
+              <div className="why-item">
+
+                <span>03</span>
+
+                <div>
+                  <h3>Technical Support</h3>
+                  <p>
+                    Professional assistance for common mobile repair
+                    and servicing needs.
+                  </p>
+                </div>
+
+              </div>
+
+              <div className="why-item">
+
+                <span>04</span>
+
+                <div>
+                  <h3>Customer Care</h3>
+                  <p>
+                    Support for warranty matters and after-sales
+                    service requirements.
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          FINAL CTA
+      ====================================================== */}
+
       <section className="final-cta">
-        <div className="container text-center">
+
+        <div className="final-cta-glow" />
+
+        <div className="container text-center position-relative">
+
           <span className="section-label">
             EMAD TELECOM • FENI
           </span>
 
-          <h2 className="mt-2">
-            Looking for a phone or mobile service?
+          <h2>
+            Looking for a phone
+            <br />
+            <span>or mobile service?</span>
           </h2>
 
-          <p
-            className="mx-auto mt-3"
-            style={{
-              maxWidth: "650px",
-              color: "rgba(255,255,255,.65)",
-              lineHeight: 1.8,
-            }}
-          >
+          <p>
             Visit EMAD TELECOM in Feni or get in touch with us for
             smartphones, accessories, repairs and servicing.
           </p>
 
           <div className="hero-buttons justify-content-center mt-4">
+
             <Link
               href="/contact"
               className="btn-primary-custom"
             >
-              Contact Us →
+              Contact Us
+              <span>→</span>
             </Link>
 
             <a
@@ -374,66 +779,101 @@ export default function Home() {
             >
               WhatsApp
             </a>
+
           </div>
+
         </div>
+
       </section>
 
-      {/* FOOTER */}
+
+      {/* =====================================================
+          FOOTER
+      ====================================================== */}
+
       <footer className="site-footer">
+
         <div className="container">
+
           <div className="row g-5">
+
             <div className="col-lg-5">
+
               <div className="footer-brand">
-                EMAD<span className="brand-accent">.</span> TELECOM
+                EMAD
+                <span className="brand-accent">.</span>
+                TELECOM
               </div>
 
               <p className="footer-text">
-                Smartphones, accessories, mobile repair and professional
-                servicing in Feni, Bangladesh.
+                Smartphones, accessories, mobile repair and
+                professional servicing in Feni, Bangladesh.
               </p>
+
+              <div className="footer-location">
+                📍 Hazari Road / Mohipal, Feni
+              </div>
+
             </div>
 
+
             <div className="col-6 col-lg-2">
+
               <div className="footer-title">
                 QUICK LINKS
               </div>
 
               <ul className="footer-links">
+
                 <li>
                   <Link href="/">Home</Link>
                 </li>
+
                 <li>
                   <Link href="/about">About</Link>
                 </li>
+
                 <li>
                   <Link href="/service">Services</Link>
                 </li>
+
                 <li>
                   <Link href="/contact">Contact</Link>
                 </li>
+
               </ul>
+
             </div>
 
+
             <div className="col-6 col-lg-5">
+
               <div className="footer-title">
                 CONTACT
               </div>
 
               <ul className="footer-links">
+
                 <li>📍 Hazari Road / Mohipal, Feni</li>
                 <li>📞 01777-446536</li>
                 <li>📞 01971-676314</li>
                 <li>✉️ ohinnurfoisal@gmail.com</li>
+
               </ul>
+
             </div>
+
           </div>
+
 
           <div className="footer-bottom text-center">
             © 2026 EMAD TELECOM. All rights reserved.
           </div>
+
         </div>
+
       </footer>
+
     </main>
   );
 }
-
