@@ -1,72 +1,193 @@
-"use client"
+"use client";
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import Link from "next/link";
-import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+variable: "--font-geist-sans",
+subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+variable: "--font-geist-mono",
+subsets: ["latin"],
 });
 
-
-
 export default function RootLayout({
-  children,
+children,
 }: Readonly<{
-  children: React.ReactNode;
+children: React.ReactNode;
 }>) {
-  useEffect(() => {
-    import('bootstrap/dist/js/bootstrap.bundle.min.js');
-  }, []);
-  const pathname = usePathname()
-  return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <nav className="navbar navbar-expand-lg bg-secondary " style={{position:'fixed', width:'100%', zIndex:'1'}}>
-          <div className="container-fluid">
-            <a className="navbar-brand text-light fw-bold Emad" href="#" >EMAD TELECOM</a>
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul className="navbar-nav justify-content-center w-100 p-3 gap-3 me-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                  <Link href="/" aria-current="page" className= {`nav-link active fw-bold ${pathname === "/" ? "text-dark" : "text-light"}`}>
-                    Home
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link href="/about" className= {`nav-link fw-bold ${pathname === "/about" ? "text-dark" : "text-light"}`}>About</Link>
-                </li>
-                <li className="nav-item">
-                  <Link href="/contact" className={`nav-link fw-bold ${pathname === "/contact" ? "text-dark" : "text-light"}`} >
-                    Contact
-                  </Link>
-                </li>
-                 <li className="nav-item">
-                  <Link href="/service"  className= {`nav-link fw-bold ${pathname === "/service" ? "text-dark" : "text-light"}`}>
-                    Service
-                  </Link>
-                </li>
-              </ul>
-              <form className="d-flex" role="search">
-                <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                <button className="btn btn-outline-success text-warning fw-bold" type="submit">Search</button>
-              </form>
-            </div>
-          </div>
+const pathname = usePathname();
+const [menuOpen, setMenuOpen] = useState(false);
+
+useEffect(() => {
+setMenuOpen(false);
+}, [pathname]);
+
+return ( <html lang="en">
+<body
+className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+>
+{/* =====================================================
+HEADER
+====================================================== */} <header className="site-header"> <div className="site-header-inner">
+
+```
+        {/* LOGO */}
+        <Link
+          href="/"
+          className="site-logo"
+          aria-label="EMAD TELECOM Home"
+        >
+          <span className="site-logo-icon">E</span>
+
+          <span className="site-logo-text">
+            EMAD<span>.</span>
+          </span>
+        </Link>
+
+        {/* DESKTOP NAVIGATION */}
+        <nav className="desktop-navigation" aria-label="Main navigation">
+          <Link
+            href="/"
+            className={`desktop-nav-link ${
+              pathname === "/" ? "active" : ""
+            }`}
+          >
+            Home
+          </Link>
+
+          <Link
+            href="/about"
+            className={`desktop-nav-link ${
+              pathname === "/about" ? "active" : ""
+            }`}
+          >
+            About
+          </Link>
+
+          <Link
+            href="/service"
+            className={`desktop-nav-link ${
+              pathname === "/service" ? "active" : ""
+            }`}
+          >
+            Services
+          </Link>
+
+          <Link
+            href="/contact"
+            className={`desktop-nav-link ${
+              pathname === "/contact" ? "active" : ""
+            }`}
+          >
+            Contact
+          </Link>
         </nav>
-        {children}
-      </body>
-    </html>
-  );
+
+        {/* DESKTOP CTA */}
+        <div className="desktop-actions">
+          <Link href="/contact" className="header-cta">
+            Visit Store
+            <span>↗</span>
+          </Link>
+        </div>
+
+        {/* MOBILE MENU BUTTON */}
+        <button
+          type="button"
+          className={`mobile-menu-button ${
+            menuOpen ? "open" : ""
+          }`}
+          onClick={() => setMenuOpen((current) => !current)}
+          aria-label={menuOpen ? "Close navigation" : "Open navigation"}
+          aria-expanded={menuOpen}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </div>
+
+      {/* ===================================================
+          MOBILE NAVIGATION
+      ==================================================== */}
+      <div
+        className={`mobile-navigation ${
+          menuOpen ? "show" : ""
+        }`}
+      >
+        <div className="mobile-navigation-inner">
+
+          <Link
+            href="/"
+            className={`mobile-nav-link ${
+              pathname === "/" ? "active" : ""
+            }`}
+            onClick={() => setMenuOpen(false)}
+          >
+            <span>01</span>
+            Home
+          </Link>
+
+          <Link
+            href="/about"
+            className={`mobile-nav-link ${
+              pathname === "/about" ? "active" : ""
+            }`}
+            onClick={() => setMenuOpen(false)}
+          >
+            <span>02</span>
+            About
+          </Link>
+
+          <Link
+            href="/service"
+            className={`mobile-nav-link ${
+              pathname === "/service" ? "active" : ""
+            }`}
+            onClick={() => setMenuOpen(false)}
+          >
+            <span>03</span>
+            Services
+          </Link>
+
+          <Link
+            href="/contact"
+            className={`mobile-nav-link ${
+              pathname === "/contact" ? "active" : ""
+            }`}
+            onClick={() => setMenuOpen(false)}
+          >
+            <span>04</span>
+            Contact
+          </Link>
+
+          <Link
+            href="/contact"
+            className="mobile-header-cta"
+            onClick={() => setMenuOpen(false)}
+          >
+            Visit Store
+            <span>↗</span>
+          </Link>
+
+        </div>
+      </div>
+    </header>
+
+    {/* =====================================================
+        PAGE CONTENT
+    ====================================================== */}
+    <main>{children}</main>
+  </body>
+</html>
+
+
+);
 }

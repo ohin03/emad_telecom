@@ -1,225 +1,270 @@
-import React from 'react'
-import Link from 'next/link';
-function page() {
+import Link from "next/link";
+
+const services = [
+  {
+    icon: "📱",
+    title: "Smartphone Sales",
+    text: "Choose from smartphones from popular brands with genuine products and helpful product guidance.",
+  },
+  {
+    icon: "🔧",
+    title: "Mobile Repair",
+    text: "Professional repair support for smartphone hardware and common device problems.",
+  },
+  {
+    icon: "⚙️",
+    title: "Mobile Servicing",
+    text: "Reliable servicing designed to keep your mobile device performing properly.",
+  },
+  {
+    icon: "🛡️",
+    title: "Warranty & Support",
+    text: "Assistance with warranty-related matters and after-sales customer support.",
+  },
+  {
+    icon: "🎧",
+    title: "Accessories & Gadgets",
+    text: "Find chargers, cables, Bluetooth devices, memory cards, screen protection and other accessories.",
+  },
+  {
+    icon: "💻",
+    title: "Software Solutions",
+    text: "Software-related support for smartphone setup, configuration and everyday mobile requirements.",
+  },
+];
+
+export const metadata = {
+  title: "Services - EMAD TELECOM",
+  description:
+    "Mobile phone sales, repair, servicing, accessories and software support from EMAD TELECOM in Feni, Bangladesh.",
+};
+
+export default function ServicePage() {
   return (
     <main>
-      <section
-      className="d-flex align-items-center justify-content-center text-light"
-      style={{
-        minHeight: "100vh",
-        backgroundImage:
-          "url('https://images.unsplash.com/photo-1518770660439-4636190af475')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        paddingTop: "90px",
-      }}
-    >
-      <div className="container bg-dark bg-opacity-75 p-5 rounded shadow-lg">
-        {/* Hero */}
-        <h2 className="text-center fw-bold mb-4 text-info">Our Services</h2>
-        <p className="text-center mb-5">
-          Complete mobile solutions under one roof. From sales to servicing,
-          we’ve got you covered.
-        </p>
+      {/* HERO */}
+      <section className="page-hero">
+        <div className="container">
+          <span className="section-label">OUR SERVICES</span>
 
-        {/* Services Grid */}
-        <div className="row text-center">
-          {/* Smartphone Sales */}
-          <div className="col-md-4 mb-4">
-            <div className="card bg-transparent border-light text-light h-100">
-              <div className="card-body">
+          <h1 className="page-title">Mobile Services</h1>
+
+          <p className="page-subtitle">
+            From smartphone sales to repair and servicing, EMAD TELECOM
+            provides practical mobile solutions for customers in Feni.
+          </p>
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section className="section">
+        <div className="container">
+          <div className="row g-4">
+            {services.map((service) => (
+              <div
+                className="col-12 col-md-6 col-lg-4"
+                key={service.title}
+              >
+                <div className="service-card h-100">
+                  <div className="service-icon">{service.icon}</div>
+
+                  <h3>{service.title}</h3>
+
+                  <p>{service.text}</p>
+
+                  <Link
+                    href="/contact"
+                    className="btn-primary-custom mt-3"
+                  >
+                    Get Support →
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICE IMAGE / SUPPORT */}
+      <section className="section section-light">
+        <div className="container">
+          <div className="row align-items-center g-5">
+            <div className="col-12 col-lg-6">
+              <span className="section-label">PROFESSIONAL SUPPORT</span>
+
+              <h2 className="section-title text-start">
+                More than just a mobile shop
+              </h2>
+
+              <p className="section-description">
+                Whether you are looking for a new smartphone, need an
+                accessory or have a device that requires technical support,
+                our team is ready to help.
+              </p>
+
+              <Link
+                href="/contact"
+                className="btn-primary-custom mt-3"
+              >
+                Contact Us →
+              </Link>
+            </div>
+
+            <div className="col-12 col-lg-6">
+              <div className="about-image">
                 <img
-                  src="https://img.icons8.com/ios-filled/80/00ffff/smartphone-tablet.png"
-                  className="mb-3"
-                  alt="Sales"
+                  src="/service1.webp"
+                  alt="EMAD TELECOM professional mobile service"
                 />
-                <h5 className="fw-bold text-info">Smartphone Sales</h5>
-                <p>Latest branded smartphones at unbeatable prices.</p>
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Mobile Repair (Special Highlight) */}
-          <div className="col-md-4 mb-4">
-            <div className="card bg-info bg-opacity-25 border-info text-light h-100 shadow-lg">
-              <div className="card-body">
-                <img
-                  src="as.jpeg"
-                  className="mb-3" width="200" height="100"
-                  alt="Repair"
-                />
-                <h5 className="fw-bold text-info">Mobile Repair</h5>
+      {/* WHY CHOOSE US */}
+      <section className="section">
+        <div className="container">
+          <div className="section-heading text-center">
+            <span className="section-label">WHY EMAD TELECOM</span>
+
+            <h2 className="section-title">
+              Service you can count on
+            </h2>
+
+            <p className="section-description mx-auto">
+              We focus on genuine products, practical solutions and
+              dependable customer support.
+            </p>
+          </div>
+
+          <div className="row g-4 mt-2">
+            <div className="col-12 col-sm-6 col-lg-3">
+              <div className="service-card h-100 text-center">
+                <div className="service-icon">✓</div>
+                <h3>Genuine Products</h3>
                 <p>
-                  Expert repairs for screen, battery, water damage, and hardware
-                  issues.
+                  Original smartphones and reliable accessories for
+                  everyday use.
+                </p>
+              </div>
+            </div>
+
+            <div className="col-12 col-sm-6 col-lg-3">
+              <div className="service-card h-100 text-center">
+                <div className="service-icon">🔧</div>
+                <h3>Expert Support</h3>
+                <p>
+                  Professional assistance for common mobile repair and
+                  servicing needs.
+                </p>
+              </div>
+            </div>
+
+            <div className="col-12 col-sm-6 col-lg-3">
+              <div className="service-card h-100 text-center">
+                <div className="service-icon">💬</div>
+                <h3>Helpful Guidance</h3>
+                <p>
+                  Get practical product information before choosing a
+                  smartphone or accessory.
+                </p>
+              </div>
+            </div>
+
+            <div className="col-12 col-sm-6 col-lg-3">
+              <div className="service-card h-100 text-center">
+                <div className="service-icon">🛡️</div>
+                <h3>Customer Care</h3>
+                <p>
+                  Support for warranty matters and after-sales service
+                  requirements.
                 </p>
               </div>
             </div>
           </div>
-
-          {/* Mobile Servicing */}
-          <div className="col-md-4 mb-4">
-            <div className="card bg-transparent border-light text-light h-100">
-              <div className="card-body">
-                <img
-                  src="https://img.icons8.com/ios-filled/80/00ffff/maintenance.png"
-                  className="mb-3"
-                  alt="Servicing"
-                />
-                <h5 className="fw-bold text-info">Mobile Servicing</h5>
-                <p>Full device checkup, cleaning, and performance optimization.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Warranty & Support */}
-          <div className="col-md-4 mb-4">
-            <div className="card bg-transparent border-light text-light h-100">
-              <div className="card-body">
-                <img
-                  src="https://img.icons8.com/ios-filled/80/00ffff/guarantee.png"
-                  className="mb-3"
-                  alt="Warranty"
-                />
-                <h5 className="fw-bold text-info">Warranty & Support</h5>
-                <p>Original warranty with trusted after-sales service.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Accessories */}
-          <div className="col-md-4 mb-4">
-            <div className="card bg-transparent border-light text-light h-100">
-              <div className="card-body">
-                <img
-                  src="acall.jpeg" 
-                  className="mb-3" width="200" height="100"
-                  alt="Accessories"
-                />
-                <h5 className="fw-bold text-info">Accessories & Gadgets</h5>
-                <p>Covers, chargers, headphones, and more.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Software Solutions */}
-          <div className="col-md-4 mb-4">
-            <div className="card bg-transparent border-light text-light h-100">
-              <div className="card-body">
-                <img
-                  src="https://img.icons8.com/ios-filled/80/00ffff/software-box.png"
-                  className="mb-3"
-                  alt="Software"
-                />
-                <h5 className="fw-bold text-info">Software Solutions</h5>
-                <p>OS updates, virus removal, and data recovery.</p>
-              </div>
-            </div>
-          </div>
         </div>
+      </section>
 
-        {/* Why Choose Us */}
-        <div className="text-center mt-5">
-          <h4 className="fw-bold text-info mb-3">Why Choose Us?</h4>
-          <p>
-            ✔ Expert Technicians & Certified Service <br />
-            ✔ Affordable & Transparent Pricing <br />
-            ✔ Original Spare Parts <br />
-            ✔ Fast & Reliable Support
+      {/* CTA */}
+      <section className="final-cta">
+        <div className="container text-center">
+          <span className="section-label">EMAD TELECOM</span>
+
+          <h2 className="mt-2">Need help with your mobile?</h2>
+
+          <p
+            className="mx-auto mt-3"
+            style={{
+              maxWidth: "620px",
+              color: "rgba(255,255,255,.65)",
+              lineHeight: 1.8,
+            }}
+          >
+            Talk to our team about smartphones, accessories, repair or
+            servicing.
           </p>
+
+          <Link
+            href="/contact"
+            className="btn-primary-custom mt-4"
+          >
+            Contact Us →
+          </Link>
         </div>
+      </section>
 
-        {/* CTA */}
-        <div className="text-center mt-5">
-          <h4 className="fw-bold">Need urgent mobile repair?</h4>
-          <p>Visit Emad Telecom or call us today.</p>
-          <a href="tel:+8801234567890" className="btn btn-info btn-lg mt-2">
-            📞 Call Now
-          </a>
-        </div>
-  
-    <div className="row mt-5">
-      
-      <div className="col-6 col-md-3 mb-3">
-        <img src="service1.webp" className="img-fluid"   width="220" height="200" alt="img1"/>
-      </div>
+      {/* FOOTER */}
+      <footer className="site-footer">
+        <div className="container">
+          <div className="row g-5">
+            <div className="col-12 col-lg-5">
+              <div className="footer-brand">
+                EMAD<span className="brand-accent">.</span> TELECOM
+              </div>
 
-     
-      <div className="col-6 col-md-3 mb-3">
-        <img src="/service2.jpeg" className="img-fluid" width="220" height="200" alt="img2"/>
-      </div>
+              <p className="footer-text">
+                Smartphones, accessories, mobile repair and professional
+                servicing in Feni, Bangladesh.
+              </p>
+            </div>
 
-      
-      <div className="col-6 col-md-3 mb-3">
-        <img src="/service3.jpg" className="img-fluid" width="220" height="200" alt="img3"/>
-      </div>
+            <div className="col-6 col-lg-2">
+              <div className="footer-title">QUICK LINKS</div>
 
-     
-      <div className="col-6 col-md-3 mb-3">
-        <img src="/service4.webp" className="img-fluid" width="220" height="200" alt="img4"/>
-      </div>
-    </div>
-  </div>
+              <ul className="footer-links">
+                <li>
+                  <Link href="/">Home</Link>
+                </li>
+                <li>
+                  <Link href="/about">About</Link>
+                </li>
+                <li>
+                  <Link href="/service">Services</Link>
+                </li>
+                <li>
+                  <Link href="/contact">Contact</Link>
+                </li>
+              </ul>
+            </div>
 
+            <div className="col-12 col-sm-6 col-lg-5">
+              <div className="footer-title">CONTACT</div>
 
+              <ul className="footer-links">
+                <li>📍 Hazari Road / Mohipal, Feni</li>
+                <li>📞 01777-446536</li>
+                <li>📞 01971-676314</li>
+                <li>✉️ ohinnurfoisal@gmail.com</li>
+              </ul>
+            </div>
+          </div>
 
-    </section>
-    <footer className="bg-dark text-white pt-5 pb-3">
-    <div className="container">
-      <div className="row">
-        
-       
-        <div className="col-md-4 mb-3">
-          <h5 className="fw-bold text-danger">EMAD TELECOM</h5>
-          <p>Your trusted mobile shop in Feni.</p>
-          <p className="small mb-0">© 2025 EMAD TELECOM | All Rights Reserved</p>
-        </div>
-        
-      
-        <div className="col-md-4 mb-3">
-          <h5 className="fw-bold text-warning">Quick Links</h5>
-          <ul className="list-unstyled">
-            <li>
-            <Link href="/" className="nav-link active text-light fw-bold" aria-current="page">
-                      Home
-                    </Link>
-                    </li>
-            <li><Link className="nav-link text-light fw-bold" href="/contact" >
-                      Contact
-                    </Link></li>
-            <li><Link className="nav-link text-light fw-bold" href="/about" >
-                      About
-                    </Link></li>
-            <li><Link className="nav-link text-light fw-bold" href="/service" >
-                      Service
-                    </Link></li>
-          </ul>
-        </div>
-        
-      
-        <div className="col-md-4 mb-3">
-          <h5 className="fw-bold text-primary">Contact Us</h5>
-          <p>📍Hazari Road, Mohipal , Feni Town</p>
-          <p>📞 0177744-6536</p>
-          <p>📧 ohinnurfoisal@gmail.com</p>
-          <div>
-            <a href="https://facebook.com/nur.foisal.ohin" className="btn btn-outline-light btn-sm me-2">Facebook</a>
-            <a href="mailto:ohinnurfoisal@gmail.com" className="btn btn-outline-light btn-sm me-2">Mail</a>
-            <a href="https://wa.me/8801971676314" className="btn btn-outline-light btn-sm">WhatsApp</a>
+          <div className="footer-bottom text-center">
+            © 2026 EMAD TELECOM. All rights reserved.
           </div>
         </div>
-        
-      </div>
-    </div>
-  </footer>
+      </footer>
     </main>
-  )
-}
-export default page;
-
-export function generateMetadata(){
-  return{
-    title:"Service- Emad Telecom",
-    description:"Wellcome to Emad Telecom Feni,Bangladesh"
-  }
+  );
 }

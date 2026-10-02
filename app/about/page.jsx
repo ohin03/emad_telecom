@@ -1,194 +1,299 @@
-import React from 'react'
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 
+const team = [
+  {
+    name: "Nurul Amin",
+    role: "Owner",
+    phone: "01777-446536",
+    image: "/owner.jpg",
+  },
+  {
+    name: "Nur Foisal Ohin",
+    role: "Manager",
+    phone: "01971-676314",
+    image: "/manager.jpg",
+  },
+  {
+    name: "Md Abid",
+    role: "Technician",
+    phone: "01832-574007",
+    image: "/tec.jpg",
+  },
+];
 
-function page() {
+export default function AboutPage() {
   return (
     <main>
-      <section className="py-5 bg-info-subtle about "> 
-  <div className="container">
-    
-   
-    <div className="row align-items-center mb-5">
-      <div className="col-md-4">
-        <h1 className="fw-bold mb-3">
-          Emad Telecom
-        </h1>
-        <p>
-          Emad Telecom started its journey in 2020 in Feni. 
-          We are one of the most trusted mobile shops, providing the latest smartphones, 
-          genuine accessories, and professional repair services. 
-          Our goal is to bring the best technology at affordable prices.However, here available second hand fresh condition android mobile and iphone.
-        </p>
-      </div>
-      <div className="col-md-4 text-center">
-        <img src="/allteam.jpg" width="300" height="200" style={{ marginTop: '80px' }} className="img-fluid rounded shadow" alt="Shop Image"/>
-      </div>
-      <div className="col-md-4 text-center">
-        <img src="/spim1.jpg" width="300" height="400" style={{ marginTop: '80px' }} className="img-fluid rounded shadow" alt="Shop Image"/>
-      </div>
-    </div>
+      {/* =========================
+          PAGE HERO
+      ========================== */}
+      <section className="page-hero">
+        <div className="container">
+          <span className="section-label">ABOUT US</span>
 
-    
-    <div className="row text-center mb-5">
-      <div className="col-md-6">
-        <h4 className="fw-bold text-success">Our Mission</h4>
-        <p>Deliver original mobile phones, reliable services, and customer satisfaction.</p>
-      </div>
-      <div className="col-md-6">
-        <h4 className="fw-bold text-success">Our Vision</h4>
-        <p>Become the most trusted and largest mobile retailer in Bangladesh.</p>
-      </div>
-    </div>
+          <h1 className="page-title">
+            About EMAD TELECOM
+          </h1>
 
-  
-    <div className="mb-5">
-      <h3 className="fw-bold text-center mb-4 bg-danger-subtle">Why Choose Us?</h3>
-      <div className="row text-center">
-        <div className="col-md-3 mb-3">
-          <div className="p-4 bg-white shadow-sm rounded">
-            <h1>✅</h1>
-            <p>100% Genuine Products</p>
-          </div>
+          <p className="page-subtitle">
+            A local mobile retailer and service center focused on
+            smartphones, accessories, repair and reliable customer service.
+          </p>
         </div>
-        <div className="col-md-3 mb-3">
-          <div className="p-4 bg-white shadow-sm rounded">
-            <h1>🚚</h1>
-            <p>Fast Delivery in Feni</p>
-          </div>
-        </div>
-        <div className="col-md-3 mb-3">
-          <div className="p-4 bg-white shadow-sm rounded">
-            <h1>🔧</h1>
-            <p>Expert Repair Service</p>
-          </div>
-        </div>
-        <div className="col-md-3 mb-3">
-          <div className="p-4 bg-white shadow-sm rounded">
-            <h1>🏆</h1>
-            <p>5+ Years of Trust</p>
-          </div>
-        </div>
-      </div>
-    </div>
+      </section>
 
-   
-    <div className="mb-5">
-      <h3 className="fw-bold text-center mb-4 bg-warning-subtle">Meet Our Team</h3>
-      <div className="row text-center">
-        <div className="col-md-4 mb-3">
-          <div className="card shadow-sm">
-            <img src="/owner.jpg"  height="500" className="card-img-top" alt="Owner"/>
-            <div className="card-body">
-              <h5 className="card-title">Nurul Amin</h5>
-              <p className="card-text">Owner</p>
-              <p className="card-text">Phn no: 01777-446536</p>
+      {/* =========================
+          OUR STORY
+      ========================== */}
+      <section className="section">
+        <div className="container">
+          <div className="row align-items-center g-5">
+            <div className="col-12 col-lg-6">
+              <div className="about-image">
+                <Image
+                  src="/allteam.jpg"
+                  alt="EMAD TELECOM team"
+                  width={900}
+                  height={650}
+                  priority
+                />
+              </div>
+            </div>
+
+            <div className="col-12 col-lg-6">
+              <span className="section-label">
+                OUR STORY
+              </span>
+
+              <h2 className="section-title text-start">
+                Serving Feni since 2020
+              </h2>
+
+              <p className="section-description">
+                EMAD TELECOM started its journey in 2020 in Feni,
+                Bangladesh, with a focus on smartphones, genuine accessories
+                and professional mobile services.
+              </p>
+
+              <p className="section-description mt-3">
+                Alongside new smartphones, we also deal with fresh-condition
+                second-hand Android and iPhone devices and provide support
+                for customers who need repair or servicing.
+              </p>
+
+              <p className="section-description mt-3">
+                Our goal is simple: provide genuine products, dependable
+                service and a customer experience people can trust.
+              </p>
             </div>
           </div>
         </div>
-        <div className="col-md-4 mb-3">
-          <div className="card shadow-sm">
-            <img src="/manager.jpg" height="500" className="card-img-top" alt="Manager"/>
-            <div className="card-body">
-              <h5 className="card-title">Nur Foisal Ohin</h5>
-              <p className="card-text">Manager</p>
-              <p className="card-text">Phn no: 01971-676314</p>
+      </section>
+
+      {/* =========================
+          MISSION & VISION
+      ========================== */}
+      <section className="section section-light">
+        <div className="container">
+          <div className="row g-4">
+            <div className="col-12 col-lg-6">
+              <div className="service-card h-100">
+                <div className="service-icon">🎯</div>
+
+                <h3>Our Mission</h3>
+
+                <p>
+                  To provide original smartphones, reliable accessories
+                  and professional services while keeping customer
+                  satisfaction at the center of our work.
+                </p>
+              </div>
+            </div>
+
+            <div className="col-12 col-lg-6">
+              <div className="service-card h-100">
+                <div className="service-icon">🚀</div>
+
+                <h3>Our Vision</h3>
+
+                <p>
+                  To become a trusted and recognized mobile retailer and
+                  service provider by consistently delivering quality
+                  products and dependable customer support.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-        <div className="col-md-4 mb-3">
-          <div className="card shadow-sm">
-            <img src="/tec.jpg" height="500" className="card-img-top" alt="Technician"/>
-            <div className="card-body">
-              <h5 className="card-title">Md Abid</h5>
-              <p className="card-text">Technician</p>
-              <p className="card-text">Phn no: 01832-574007</p>
+      </section>
+
+      {/* =========================
+          TEAM
+      ========================== */}
+      <section className="section">
+        <div className="container">
+          <div className="section-heading">
+            <span className="section-label">
+              OUR TEAM
+            </span>
+
+            <h2 className="section-title">
+              Meet the people behind EMAD
+            </h2>
+
+            <p className="section-description">
+              Our team works together to provide product guidance,
+              technical support and customer service.
+            </p>
+          </div>
+
+          <div className="row g-4">
+            {team.map((person) => (
+              <div
+                className="col-12 col-md-6 col-lg-4"
+                key={person.name}
+              >
+                <div className="team-card h-100">
+
+                  {/* TEAM PHOTO */}
+                  <div className="team-image">
+                    <Image
+                      src={person.image}
+                      alt={`${person.name} - ${person.role}`}
+                      width={600}
+                      height={750}
+                      sizes="(max-width: 767px) 100vw, (max-width: 991px) 50vw, 33vw"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        objectPosition: "center 25%",
+                        display: "block",
+                      }}
+                    />
+                  </div>
+
+                  {/* TEAM DETAILS */}
+                  <div className="team-body">
+                    <h3>{person.name}</h3>
+
+                    <div className="team-role">
+                      {person.role}
+                    </div>
+
+                    <p className="section-description mt-2">
+                      📞 {person.phone}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* =========================
+          CTA
+      ========================== */}
+      <section className="final-cta">
+        <div className="container text-center">
+          <span className="section-label">
+            GET IN TOUCH
+          </span>
+
+          <h2 className="mt-2">
+            Need a smartphone or mobile service?
+          </h2>
+
+          <div className="hero-buttons justify-content-center mt-4">
+            <Link
+              href="/contact"
+              className="btn-primary-custom"
+            >
+              Contact EMAD →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================
+          FOOTER
+      ========================== */}
+      <footer className="site-footer">
+        <div className="container">
+          <div className="row g-5">
+
+            {/* BRAND */}
+            <div className="col-12 col-lg-5">
+              <div className="footer-brand">
+                EMAD
+                <span className="brand-accent">.</span>{" "}
+                TELECOM
+              </div>
+
+              <p className="footer-text">
+                Smartphones, accessories, mobile repair and professional
+                servicing in Feni, Bangladesh.
+              </p>
+            </div>
+
+            {/* QUICK LINKS */}
+            <div className="col-6 col-lg-2">
+              <div className="footer-title">
+                QUICK LINKS
+              </div>
+
+              <ul className="footer-links">
+                <li>
+                  <Link href="/">Home</Link>
+                </li>
+
+                <li>
+                  <Link href="/about">About</Link>
+                </li>
+
+                <li>
+                  <Link href="/service">Services</Link>
+                </li>
+
+                <li>
+                  <Link href="/contact">Contact</Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* CONTACT */}
+            <div className="col-12 col-sm-6 col-lg-5">
+              <div className="footer-title">
+                CONTACT
+              </div>
+
+              <ul className="footer-links">
+                <li>
+                  📍 Hazari Road / Mohipal, Feni
+                </li>
+
+                <li>
+                  📞 01777-446536
+                </li>
+
+                <li>
+                  📞 01971-676314
+                </li>
+
+                <li>
+                  ✉️ ohinnurfoisal@gmail.com
+                </li>
+              </ul>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
 
-    <div className="mb-5">
-      <h3 className="fw-bold text-center mb-4 bg-success-subtle">What Our Customers Say</h3>
-      <div className="row">
-        <div className="col-md-6">
-          <blockquote className="blockquote bg-white p-4 rounded shadow-sm">
-            <p>"I bought my phone from Emad Telecom, best service in Feni!"</p>
-            <footer className="blockquote-footer">Happy Customer</footer>
-          </blockquote>
-        </div>
-        <div className="col-md-6">
-          <blockquote className="blockquote bg-white p-4 rounded shadow-sm">
-            <p>"Fast repair service, highly recommended."</p>
-            <footer className="blockquote-footer">Satisfied Client</footer>
-          </blockquote>
-        </div>
-      </div>
-    </div>
-
-  </div>  
-</section>
-
-<footer className="bg-dark text-white pt-5 pb-3">
-    <div className="container">
-      <div className="row">
-        
-       
-        <div className="col-md-4 mb-3">
-          <h5 className="fw-bold text-danger">EMAD TELECOM</h5>
-          <p>Your trusted mobile shop in Feni.</p>
-          <p className="small mb-0">© 2025 EMAD TELECOM | All Rights Reserved</p>
-        </div>
-        
-      
-        <div className="col-md-4 mb-3">
-          <h5 className="fw-bold text-warning">Quick Links</h5>
-          <ul className="list-unstyled">
-            <li>
-            <Link href="/" className="nav-link active text-light fw-bold" aria-current="page">
-                      Home
-                    </Link>
-                    </li>
-            <li><Link className="nav-link text-light fw-bold" href="/contact" >
-                      Contact
-                    </Link></li>
-            <li><Link className="nav-link text-light fw-bold" href="/about" >
-                      About
-                    </Link></li>
-            <li><Link className="nav-link text-light fw-bold" href="/service" >
-                      Service
-                    </Link></li>
-          </ul>
-        </div>
-        
-      
-        <div className="col-md-4 mb-3">
-          <h5 className="fw-bold text-primary">Contact Us</h5>
-          <p>📍Hazari Road, Mohipal , Feni Town</p>
-          <p>📞 0177744-6536</p>
-          <p>📧 ohinnurfoisal@gmail.com</p>
-          <div>
-            <a href="https://facebook.com/nur.foisal.ohin" className="btn btn-outline-light btn-sm me-2">Facebook</a>
-            <a href="mailto:ohinnurfoisal@gmail.com" className="btn btn-outline-light btn-sm me-2">Mail</a>
-            <a href="https://wa.me/8801971676314" className="btn btn-outline-light btn-sm">WhatsApp</a>
+          <div className="footer-bottom text-center">
+            © 2026 EMAD TELECOM. All rights reserved.
           </div>
         </div>
-        
-      </div>
-    </div>
-  </footer>
+      </footer>
     </main>
-
-  )
-}
-
-export default page
-
-
-export function generateMetadata(){
-  return{
-    title:"About- Emad Telecom",
-    description:"Wellcome to Emad Telecom Feni,Bangladesh"
-  }
+  );
 }
